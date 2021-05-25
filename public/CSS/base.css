@@ -1,0 +1,67 @@
+/* ********************************************* SCROLL *********************************************** */
+
+html{
+	scroll-behavior: smooth;
+}
+
+/* ********************************************* TITLE *********************************************** */
+
+h2, h3, h4, footer{
+	text-align: center;
+	color:#FFFF;
+}
+h5{
+	color:#FFFF;
+	font-size: 18px !important;
+}
+
+/* ********************************************* NAVBAR *********************************************** */
+
+.collapse{
+	margin-left:4%;
+}
+.nav-item{
+	color: darkslategray;
+	font-weight: bold;
+	margin-right: 20px;
+}
+.nav-item img{
+	width: 70px;
+}
+header{
+	border-radius:20px;
+}
+.hide{
+	display: none;
+}
+
+/* ********************************************* SEARCH *********************************************** */
+
+#search {
+  background-size: cover;
+  height: 0px;
+  width: 70px;
+  min-width: 450px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 55px;
+  margin-right: 20px;
+}
+#search .input-group {
+  width: 50%;
+  min-width: 350px;
+  margin: 0 auto;
+}
+
+/* ************************************************* FOOTER ************************************************ */
+
+footer{
+	margin-top:50px;
+	background-color: #212529;
+	padding: 15px 0 4px 0;
+}
+.element img{
+	border-radius: 0%;
+	width: 70px;
+}
