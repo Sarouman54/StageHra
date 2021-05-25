@@ -1,0 +1,163 @@
+/* ********************************************* HEADER *********************************************** */
+
+header{
+	background: url(../Images/logo.png)no-repeat 50% 50%;
+	background-size: cover;
+	height: 100vh;
+	margin-bottom: 40px;
+}
+h1{
+	font-style: oblique 10deg;
+	font-family: cursive;
+	padding: 350px 0 0 43%;
+	text-shadow: -3px 3px 2px #fff;
+	animation: titre ease 2s;
+}
+@keyframes titre{
+	0%{
+		opacity:0;
+		transform: translate(-280px, 0px);
+	}
+	100%{
+		opacity:1;
+		translate: (0px, 0px);
+	}
+}
+
+/* *************************************** BUTTON SIGN-IN && SIGN-UP ***************************************** */
+
+.boutonmenuprincipal {
+	background-color: #0d6efd;
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding:20px;
+	margin-bottom:15px;
+	margin-top:20px;
+	font-size: 15px;
+	padding:10px;
+	margin-right:40px;
+
+}
+.boutonmenuprincipal:hover {
+	background-color: #0d6efd;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-list {
+	display: none;
+	background-color: #0d6efd;
+	min-width: 10px;
+}
+.dropdown-list a {
+	color: white;
+	padding: 20px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown:hover .dropdown-list {
+	display: block;
+}
+.hide{
+	display: block!important;
+}
+
+/* ********************************************* LEFT PART ******************************************** */
+
+#leftPart{
+	background-color: #160947;
+	border-radius: 20px;
+	padding: 25px;
+}
+.elements{
+	padding: 70px 0;
+}
+.elements img{
+	border-radius: 70%;
+	width: 300px;
+}
+.elements p {
+  font-size: 1.2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  padding-right: 20px;
+  padding-left: 80px;
+  color:#FFFF;
+}
+.elements .button{
+	text-align: right;
+	margin: 15px 4% 0 0;
+}
+
+/* *********************************************** RIGHT PART ********************************************** */
+
+#rightPart{
+	background-color: #140759;
+	border-radius: 20px;
+	padding:20px;
+}
+.tips{
+	height:200px;
+	width:200px;
+	margin: 40px auto;;
+}
+.reseau{
+	font-size:100px;
+	text-align:center;
+	height:200px;
+	width:200px;
+	margin: 20px auto;
+	padding:20px;
+}
+#contact.h5{
+	padding:50px;
+	font-size:100px;
+}
+
+/* ********************************************* RESPONSIVE ******************************************** */
+
+@media screen and (max-width: 990px) {
+  #rightPart {
+    display: flex;
+  }
+  #rightPart h2 {
+    display: flex;
+  }
+  .tips {
+    height: 130px;
+    width: 130px;
+  }
+}
+@media screen and (max-width: 790px) {
+  h1 {
+    font-size: 3em;
+  }
+  .elements {
+    padding: 30px 0;
+  }
+  .elements img {
+    max-width: 140px;
+    margin-top: 40px;
+  }
+  .tips {
+    height: 90px;
+    width: 90px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .elements {
+    padding: 15px 0;
+    text-align: center;
+  }
+  .elements img {
+    margin-bottom: 10px;
+  }
+  nav {
+    display: none !important;
+  }
+  
+}
