@@ -13,6 +13,9 @@
     <header>
         <div class="hide"></div>
         <h1> HRA <br> CONCEPT </h1>
+        {% for message in app.flashes('Success') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
     </header>
     
 <!--  ********************************************* MAIN PART *********************************************** -->
