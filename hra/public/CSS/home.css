@@ -1,7 +1,7 @@
 /* ********************************************* HEADER *********************************************** */
 
 header{
-	background: url(../Images/logo.png)no-repeat 50% 50%;
+	background: no-repeat 50% 50% url(../Images/logo.png);
 	background-size: cover;
 	height: 100vh;
 	margin-bottom: 40px;
@@ -9,7 +9,7 @@ header{
 h1{
 	font-style: oblique 10deg;
 	font-family: cursive;
-	padding: 350px 0 0 43%;
+	padding: 250px 0 0 44%;
 	text-shadow: -3px 3px 2px #fff;
 	animation: titre ease 2s;
 }
