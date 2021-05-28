@@ -11,12 +11,31 @@
         <link rel="stylesheet" href="{{ asset('CSS/base.css')}}">
         <link rel="stylesheet" href="{{ asset('CSS/Librairies/bootstrap.css')}}">
 
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body>
         {% block header %}
-            <nav class="navbar navbar-expand-sm bg-dark fixed-top">
+        	<div id="mySidenav" class="sidenav">
+            	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra">
+                <br>
+                <img src="{{ asset('Images/Icones/personnels.png')}}" alt="personnels" class="personnels"><a href="#">Personnels</a>
+                <img src="{{ asset('Images/Icones/activites.png')}}" alt="activites" class="activites"><a href="#">Activités</a>
+                <img src="{{ asset('Images/Icones/organisation.png')}}" alt="organisation" class="organisation"><a href="#">Organisation</a>
+                <img src="{{ asset('Images/Icones/localisation.png')}}" alt="localisation" class="localisation"><a href="#">Localisation</a>
+                <div class="footermenu">
+                	<hr class="dividermenu">
+                    <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="parametres"><a href="#">Paramètres</a>
+                	<img src="{{ asset('Images/Icones/logout.png')}}" alt="se déconnecter" class="deconnexion"><a href="#">Se Déconnecter</a>
+                </div>
+            </div>
+            <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<!-- ************************************************* ADD SCRIPT ************************************************ -->
+
+        	<script src="{{ asset('JS/base.js')}}"></script>
+        	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+
+            <!--  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
                 <div class="collapse navbar-collapse">
                     <a href="{{ path('home')}}" class="nav-item"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt=""></a>
                     <a href="{{ path('home')}}" class="nav-item nav-link">Accueil</a>
@@ -34,18 +53,28 @@
                 </div>
                 <div class="hide">
                     <div class="dropdown">
+                    {% if not app.user %}
                         <button class="boutonmenuprincipal">Connexion/Inscription</button>
                         <div class="dropdown-list">
                             <a href="{{ path('app_login')}}" class="nav-item nav-link">S'identifier</a>
                             <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
                         </div>
+                    {% else %}
+                        <button class="boutonmenuprincipal">Compte</button>
+                        <div class="dropdown-list">
+                            <a href="" class="nav-item nav-link">{{app.user.email}}</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            
+                            {% endif %}
+                            <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
+                        </div>
+                    {% endif %}
                     </div>
                 </div>
-            </nav>
+            </nav>-->
         {% endblock %}       
 
         {% block body %}
-    
         {% endblock %}
 
 <!-- ************************************************* FOOTER ************************************************ -->
@@ -57,7 +86,8 @@
                 </div>
                 <p>from Lycée Antoine Bourdelle 2021 ©</p>
             </footer>
-            {% endblock %}
+            
+        {% endblock %}
         
     </body>
 </html>

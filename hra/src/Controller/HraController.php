@@ -26,12 +26,6 @@ class HraController extends AbstractController
         return $this->render('HRA/home.html.twig');
     }
 
-    #[Route('/admin/agenda', name: 'agenda')]
-    public function agenda(): Response
-    {
-        return $this->render('HRA/agenda.html.twig');
-    }
-
     #[Route('/statistiques', name: 'statistiques')]
     public function statistical(): Response
     {
@@ -42,11 +36,5 @@ class HraController extends AbstractController
     public function contact(): Response
     {
         return $this->render('HRA/contact.html.twig');
-    }
-
-    #[Route('/truc', name: 'administrateur')]
-    public function administrator(): Response
-    {
-        return $this->render('HRA/Admin/adminHome.html.twig');
     }
 }

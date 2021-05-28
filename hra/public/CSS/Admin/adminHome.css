@@ -1,3 +1,108 @@
-header{
-	margin-top: 150px;
+body {
+  font-family: "Lato", sans-serif;
 }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212529;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  font-size: 30px;
+  margin-left: 170px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.logohra{
+	width: 45%;
+	border-radius: 100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.personnels{
+	margin-top: 3%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.activites{
+	margin-top: 3%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.organisation{
+	margin-top: 3%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.localisation{
+	margin-top: 2%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.footermenu{
+	margin-top: 100%;
+}
+
+.dividermenu{
+	border-top: 1px solid #bbb;
+}
+
+.parametres{
+	margin-top: 3%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.deconnexion{
+	margin-top: 3%;
+	width: 12%;
+	float:left;
+	padding-right: 3%;
+	padding-left: 3%;
+}
+
+.map {
+	height: 400px;
+	width: 100%;
+}
+
