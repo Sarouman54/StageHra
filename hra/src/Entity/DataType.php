@@ -22,6 +22,12 @@ class DataType
      */
     private $data_type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Data::class, inversedBy="data_type")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $id_data;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -38,4 +44,16 @@ class DataType
 
         return $this;
     }
+
+//     public function getIdData(): ?Data
+//     {
+//         return $this->id_data;
+//     }
+
+//     public function setIdData(?Data $id_data): self
+//     {
+//         $this->id_data = $id_data;
+
+//         return $this;
+//     }
 }
