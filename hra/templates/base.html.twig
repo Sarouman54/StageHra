@@ -34,11 +34,23 @@
                 </div>
                 <div class="hide">
                     <div class="dropdown">
+                    {% if not app.user %}
                         <button class="boutonmenuprincipal">Connexion/Inscription</button>
                         <div class="dropdown-list">
-                            <a href="{{ path('connexion')}}" class="nav-item nav-link">S'identifier</a>
-                            <a href="{{ path('inscription')}}" class="nav-item nav-link">Créer son compte</a>
+                            <a href="{{ path('app_login')}}" class="nav-item nav-link">S'identifier</a>
+                            <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
                         </div>
+                    {% else %}
+                        <button class="boutonmenuprincipal">Compte</button>
+                        <div class="dropdown-list">
+                            <a href="" class="nav-item nav-link">{{app.user.email}}</a>
+                           	{% if is_granted('ROLE_ADMIN') %}
+                           	
+                           	{% endif %}
+                            <a href="{{ path('app_logout')}}" class="nav-item nav-link">D�connexion</a>
+                        	
+                        </div>                    
+                    {% endif %}
                     </div>
                 </div>
             </nav>
