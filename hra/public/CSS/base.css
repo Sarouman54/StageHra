@@ -4,7 +4,7 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 0px 8px 0px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -27,9 +27,9 @@ body {
   color: #f1f1f1;
 }
 
-.sidenav .closebtn {
-  font-size: 30px;
-  margin-left: 170px;
+.closebtn {
+  margin-left: 3%;
+  font-size: 30px!important;
 }
 
 @media screen and (max-height: 450px) {
@@ -42,31 +42,40 @@ body {
 	border-radius: 100%;
 	display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    margin-top: 10%;
 }
 
-.personnels{
+.user{
+	margin-left: 15%;
+}
+
+.home{
 	margin-top: 4%;
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
 }
 
-.activites{
+.staff{
 	margin-top: 4%;
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
 }
 
-.organisation{
+.activities{
 	margin-top: 4%;
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
+}
+
+.organization{
+	margin-top: 4%;
+	width: 20%;
+	float:left;
+	padding-right: 3%;
 }
 
 .localisation{
@@ -74,7 +83,13 @@ body {
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
+}
+
+.contact{
+	margin-top: 5%;
+	width: 20%;
+	float:left;
+	padding-right: 3%;
 }
 
 .footermenu{
@@ -85,20 +100,37 @@ body {
 	border-top: 1px solid #bbb;
 }
 
-.parametres{
-	margin-top: 4%;
+.settings{
+	margin-top: 5%;
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
 }
 
-.deconnexion{
-	margin-top: 4%;
+.register{
+	margin-top: 5%;
 	width: 20%;
 	float:left;
 	padding-right: 3%;
-	padding-left: 3%;
+}
+
+.login{
+	margin-top: 5%;
+	width: 20%;
+	float:left;
+	padding-right: 3%;
+}
+
+.logout{
+	margin-top: 5%;
+	width: 20%;
+	float:left;
+	padding-right: 3%;
+}
+
+.margin-navbar{
+	margin-left: 20%;
+	margin-top: 5%;
 }
 
 /* ********************************************* SCROLL *********************************************** */

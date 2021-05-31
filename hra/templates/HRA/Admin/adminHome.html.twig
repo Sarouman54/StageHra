@@ -1,31 +1,22 @@
+{% extends 'base.html.twig' %}
+
 {% block title %}{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('CSS/Admin/adminHome.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
 {% endblock %}
 
 {% block body %}
-		
-	<div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra">
-        <br>
-        <img src="{{ asset('Images/Icones/personnels.png')}}" alt="personnels" class="personnels"><a href="#">Personnels</a>
-        <img src="{{ asset('Images/Icones/activites.png')}}" alt="activites" class="activites"><a href="#">Activités</a>
-        <img src="{{ asset('Images/Icones/organisation.png')}}" alt="organisation" class="organisation"><a href="#">Organisation</a>
-        <img src="{{ asset('Images/Icones/localisation.png')}}" alt="localisation" class="localisation"><a href="#">Localisation</a>
-        <div class="footermenu">
-        	<hr class="dividermenu">
-            <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="parametres"><a href="#">Paramètres</a>
-            <img src="{{ asset('Images/Icones/logout.png')}}" alt="se déconnecter" class="deconnexion"><a href="#">Se Déconnecter</a>
-        </div>
-	</div>
 
-    <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
-   
-<!-- ************************************************* ADD SCRIPT ************************************************ -->
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 
-	<script src="{{ asset('JS/adminHome.js')}}"></script>
-	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+	<div class="margin-navbar">
+        <div id="map" class="map"></div>
+    </div>
     
+    <script src="{{ asset('JS/Admin/adminHome.js')}}"></script>
+    
+</body>
 {% endblock %}

@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/admin", name="adminHome")
      */
     public function admin(): Response
     {
@@ -23,31 +23,31 @@ class DashboardController extends AbstractDashboardController
      */
     public function agenda(): Response
     {
-        return $this->render('HRA/agenda.html.twig');
+        return $this->render('HRA/Admin/agenda.html.twig');
     }
     
     /**
-     * @Route("/admin/activites", name="activite")
+     * @Route("/admin/activites", name="activities")
      */
     public function activite(): Response
     {
-        return $this->render('HRA/activite.html.twig');
+        return $this->render('HRA/Admin/activite.html.twig');
     }
     
     /**
-     * @Route("/admin/personnels", name="personnels")
+     * @Route("/admin/personnels", name="staff")
      */
     public function personnels(): Response
     {
-        return $this->render('HRA/personnels.html.twig');
+        return $this->render('HRA/Admin/personnels.html.twig');
     }
     
     /**
-     * @Route("/admin/organisation", name="organisation")
+     * @Route("/admin/organisation", name="organization")
      */
     public function organisation(): Response
     {
-        return $this->render('HRA/organisation.html.twig');
+        return $this->render('HRA/Admin/organisation.html.twig');
     }
     
     /**
@@ -55,7 +55,23 @@ class DashboardController extends AbstractDashboardController
      */
     public function localisation(): Response
     {
-        return $this->render('HRA/localisation.html.twig');
+        return $this->render('HRA/Admin/localisation.html.twig');
+    }
+    
+    /**
+     * @Route("/admin/statistiques", name="statistical")
+     */
+    public function statistiques(): Response
+    {
+        return $this->render('HRA/Admin/statistiques.html.twig');
+    }
+    
+    /**
+     * @Route("/admin/parametres", name="settings")
+     */
+    public function parametres(): Response
+    {
+        return $this->render('HRA/Admin/parametres.html.twig');
     }
     
     

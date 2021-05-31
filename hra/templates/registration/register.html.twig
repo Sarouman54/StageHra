@@ -7,21 +7,20 @@
 {% endblock %}
 
 {% block body %}
-
-	<header></header>
-
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email, {'attr': {'placeholder': 'JaneDoe@gmail.com'}}) }}
-        {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Jane'}}) }}
-        {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Doe'}}) }}
-        {{ form_row(registrationForm.plainPassword) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+	<div class="margin-navbar">
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+    
+        <h1>Register</h1>
+    
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email, {'attr': {'placeholder': 'JaneDoe@gmail.com'}}) }}
+            {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Jane'}}) }}
+            {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Doe'}}) }}
+            {{ form_row(registrationForm.plainPassword) }}
+    
+            <button type="submit" class="btn">Register</button>
+        {{ form_end(registrationForm) }}
+	</div>
 {% endblock %}

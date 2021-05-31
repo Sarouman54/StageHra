@@ -8,32 +8,40 @@
         {% block stylesheets %}
         {% endblock %}
 
-        <link rel="stylesheet" href="{{ asset('CSS/base.css')}}">
         <link rel="stylesheet" href="{{ asset('CSS/Librairies/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{ asset('CSS/base.css')}}">
 
+        {% block javascripts %}
+        {% endblock %}
     </head>
+   
     <body>
         {% block header %}
-        	<div id="mySidenav" class="sidenav">
-            	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra">
+            <div id="mySidenav" class="sidenav">
+{#             	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>#}
+                <a href="#"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra"></a>
                 <br>
-                <img src="{{ asset('Images/Icones/personnels.png')}}" alt="personnels" class="personnels"><a href="#">Personnels</a>
-                <img src="{{ asset('Images/Icones/activites.png')}}" alt="activites" class="activites"><a href="#">Activités</a>
-                <img src="{{ asset('Images/Icones/organisation.png')}}" alt="organisation" class="organisation"><a href="#">Organisation</a>
-                <img src="{{ asset('Images/Icones/localisation.png')}}" alt="localisation" class="localisation"><a href="#">Localisation</a>
-                <div class="footermenu">
-                	<hr class="dividermenu">
-                    <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="parametres"><a href="#">Paramètres</a>
-                	<img src="{{ asset('Images/Icones/logout.png')}}" alt="se déconnecter" class="deconnexion"><a href="#">Se Déconnecter</a>
-                </div>
+                {% if not app.user %}
+                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}">Accueil</a>
+                    <img src="{{ asset('Images/Icones/login.png')}}" alt="connexion" class="login"><a href="{{ path('app_login')}}">Connexion</a>
+                    <img src="{{ asset('Images/Icones/inscription.png')}}" alt="inscription" class="register"><a href="{{ path('app_register')}}">Inscription</a>
+                    <img src="{{ asset('Images/Icones/contact.png')}}" alt="contact" class="contact"><a href="{{ path('contact')}}">Contact</a>
+                {% else %}
+                	<a href="#" class="nav-item nav-link user">{{app.user.firstName}} {{app.user.lastName}}</a>
+                	{% if is_granted('ROLE_ADMIN') %}
+                    	<img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('adminHome')}}">Accueil</a>
+                    {% else %}
+                        <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('userHome')}}">Accueil</a>
+                    {% endif %}                	
+                 	<div class="footermenu">
+                    	<hr class="dividermenu">
+                        <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="settings"><a href="{{ path('settings')}}">Paramètres</a>
+						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Se Déconnecter</a>                
+                    </div>
+                {% endif %}
             </div>
-            <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
-
-<!-- ************************************************* ADD SCRIPT ************************************************ -->
-
-        	<script src="{{ asset('JS/base.js')}}"></script>
-        	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+{#             <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>#}
+{#             <script src="{{ asset('JS/base.js')}}"></script>#}
 
             <!--  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
                 <div class="collapse navbar-collapse">
@@ -41,7 +49,7 @@
                     <a href="{{ path('home')}}" class="nav-item nav-link">Accueil</a>
                     <a href="{{ path('agenda')}}" class="nav-item nav-link">Agenda</a>
                     <a href="{{ path('contact')}}" class="nav-item nav-link">Contact</a>
-                    <a href="{{ path('statistiques')}}" class="nav-item nav-link">Statistiques</a>
+                    <a href="{{ path('statistical')}}" class="nav-item nav-link">Statistiques</a>
                     <div id="search">
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="entrez votre recherche...">
@@ -74,7 +82,7 @@
             </nav>-->
         {% endblock %}       
 
-        {% block body %}
+        {% block body %}        
         {% endblock %}
 
 <!-- ************************************************* FOOTER ************************************************ -->
@@ -88,6 +96,5 @@
             </footer>
             
         {% endblock %}
-        
-    </body>
+	</body>
 </html>
