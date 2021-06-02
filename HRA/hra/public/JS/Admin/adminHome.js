@@ -11,14 +11,25 @@ var map = new ol.Map({
     })
 });
 
-$.get(
-	'/adminMap',
-	'false', 
-    AddMap, 
-	'json'
-);
+AjaxCall();
+setInterval(AjaxCall, 10000);
+
+function AjaxCall(){
+	$.get(
+		'/adminMap',
+		'false', 
+	    AddMap, 
+		'json'
+	)
+}
 
 function AddMap(data) {
+	
+	if(map.getLayers().getLength() >= 2){
+		for(let i = 0; i+1 < map.getLayers().getLength() ; i++)
+			map.removeLayer(map.getLayers().item(i+1));
+	}
+		
 	data.forEach((coordinate) => {
 		var layer = new ol.layer.Vector({					
 			source: new ol.source.Vector({
