@@ -24,46 +24,6 @@ h1{
 	}
 }
 
-/* *************************************** BUTTON SIGN-IN && SIGN-UP ***************************************** */
-
-.boutonmenuprincipal {
-	background-color: #0d6efd;
-	color: white;
-	border: none;
-	cursor: pointer;
-	padding:20px;
-	margin-bottom:15px;
-	margin-top:20px;
-	font-size: 15px;
-	padding:10px;
-	margin-right:40px;
-
-}
-.boutonmenuprincipal:hover {
-	background-color: #0d6efd;
-}
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-.dropdown-list {
-	display: none;
-	background-color: #0d6efd;
-	min-width: 10px;
-}
-.dropdown-list a {
-	color: white;
-	padding: 20px;
-	text-decoration: none;
-	display: block;
-}
-.dropdown:hover .dropdown-list {
-	display: block;
-}
-.hide{
-	display: block!important;
-}
-
 /* ********************************************* LEFT PART ******************************************** */
 
 #leftPart{

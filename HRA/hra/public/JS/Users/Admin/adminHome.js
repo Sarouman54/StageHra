@@ -35,7 +35,7 @@ function AddMap(data) {
 			source: new ol.source.Vector({
 				features: [
 					new ol.Feature({
-		  				geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinate["longitude"], coordinate["latitude"]]))
+		  				geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinate["longitude"], coordinate["latitude"]])),
 					}),
 				]
 			})

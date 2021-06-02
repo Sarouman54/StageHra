@@ -29,7 +29,6 @@ class Truck
 
     /**
      * @ORM\OneToOne(targetEntity=ElectronicCard::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $id_card;
 

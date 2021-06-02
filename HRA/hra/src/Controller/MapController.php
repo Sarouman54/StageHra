@@ -17,6 +17,12 @@ class MapController extends AbstractController
         $dataObjects = $doctrine->getRepository(Data::class)->findAll();    
         $coordinate = array();
         foreach($dataObjects as $dataObject){
+            
+            $idTruck = ($dataObject->getIdTruck());
+            
+            dump($idTruck);
+            die();
+            
             $nmeaTrame = explode(",", $dataObject->getNmea());
             
             $latitude = floatval($nmeaTrame[2]);
