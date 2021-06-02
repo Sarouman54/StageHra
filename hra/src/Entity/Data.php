@@ -17,41 +17,61 @@ class Data
      */
     private $id;
 
+   
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=User::class)
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $time;
+    private $id_user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Truck::class)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $id_truck;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $gps;
+    private $nmea;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTime(): ?string
+    public function getIdUser(): ?user
     {
-        return $this->time;
+        return $this->id_user;
     }
 
-    public function setTime(string $time): self
+    public function setIdUser(?user $id_user): self
     {
-        $this->time = $time;
+        $this->id_user = $id_user;
 
         return $this;
     }
 
-    public function getGps(): ?string
+    public function getIdTruck(): ?truck
     {
-        return $this->gps;
+        return $this->id_truck;
     }
 
-    public function setGps(string $gps): self
+    public function setIdTruck(?truck $id_truck): self
     {
-        $this->gps = $gps;
+        $this->id_truck = $id_truck;
+
+        return $this;
+    }
+
+    public function getNmea(): ?string
+    {
+        return $this->nmea;
+    }
+
+    public function setNmea(string $nmea): self
+    {
+        $this->nmea = $nmea;
 
         return $this;
     }

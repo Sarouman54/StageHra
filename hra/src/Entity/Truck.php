@@ -22,6 +22,16 @@ class Truck
      */
     private $registration;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     */
+    private $id_driver;
+
+    /**
+     * @ORM\OneToOne(targetEntity=ElectronicCard::class, cascade={"persist", "remove"})
+     */
+    private $id_card;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +45,30 @@ class Truck
     public function setRegistration(string $registration): self
     {
         $this->registration = $registration;
+
+        return $this;
+    }
+
+    public function getIdDriver(): ?user
+    {
+        return $this->id_driver;
+    }
+
+    public function setIdDriver(?user $id_driver): self
+    {
+        $this->id_driver = $id_driver;
+
+        return $this;
+    }
+
+    public function getIdCard(): ?electronicCard
+    {
+        return $this->id_card;
+    }
+
+    public function setIdCard(?electronicCard $id_card): self
+    {
+        $this->id_card = $id_card;
 
         return $this;
     }

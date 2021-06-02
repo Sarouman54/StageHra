@@ -22,7 +22,7 @@
                 <a href="#"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra"></a>
                 <br>
                 {% if not app.user %}
-                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}">Accueil</a>
+                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}" class="homeText">Accueil</a>
                     <img src="{{ asset('Images/Icones/login.png')}}" alt="connexion" class="login"><a href="{{ path('app_login')}}">Connexion</a>
                     <img src="{{ asset('Images/Icones/inscription.png')}}" alt="inscription" class="register"><a href="{{ path('app_register')}}">Inscription</a>
                     <img src="{{ asset('Images/Icones/contact.png')}}" alt="contact" class="contact"><a href="{{ path('contact')}}">Contact</a>
@@ -36,7 +36,7 @@
                  	<div class="footermenu">
                     	<hr class="dividermenu">
                         <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="settings"><a href="{{ path('settings')}}">Paramètres</a>
-						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Se Déconnecter</a>                
+						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Déconnexion</a>                
                     </div>
                 {% endif %}
             </div>

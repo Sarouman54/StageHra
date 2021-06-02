@@ -3,21 +3,21 @@ body {
 }
 
 .sidenav {
-  height: 100%;
-  width: 15%;
+  height: 100vw;
+  width: 15vw;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: 0vw;
+  left: 0vw;
   background-color: #212529;
   overflow-x: hidden;
   transition: 0.5s;
 }
 
 .sidenav a {
-  padding: 8px 0px 8px 0px;
+  padding: 0.7vw 0vw 0.7vw 0vw;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5vw;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -38,12 +38,12 @@ body {
 }
 
 .logohra{
-	width: 45%;
-	border-radius: 100%;
+	width: 7vw;
+	border-radius: 100vw;
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 2vw;
 }
 
 .user{
@@ -51,45 +51,45 @@ body {
 }
 
 .home{
-	margin-top: 4%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .staff{
-	margin-top: 4%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .activities{
-	margin-top: 4%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .organization{
-	margin-top: 4%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .localisation{
-	margin-top: 3%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .contact{
-	margin-top: 5%;
-	width: 20%;
+	margin-top: 0.7vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .footermenu{
@@ -97,35 +97,36 @@ body {
 }
 
 .dividermenu{
-	border-top: 1px solid #bbb;
+	border-top: 0.1vw solid #bbb;
 }
 
 .settings{
-	margin-top: 5%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .register{
-	margin-top: 5%;
-	width: 20%;
+	margin-top: 0.7vw;
+	margin-left: 0.2vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.3vw;
 }
 
 .login{
-	margin-top: 5%;
-	width: 20%;
+	margin-top: 0.7vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .logout{
-	margin-top: 5%;
-	width: 20%;
+	margin-top: 0.5vw;
+	width: 3vw;
 	float:left;
-	padding-right: 3%;
+	padding-right: 0.5vw;
 }
 
 .margin-navbar{
@@ -172,6 +173,7 @@ h5{
   margin-bottom: 55px;
   margin-right: 20px;
 }
+
 #search .input-group {
   width: 50%;
   min-width: 350px;
@@ -181,11 +183,13 @@ h5{
 /* ************************************************* FOOTER ************************************************ */
 
 footer{
-	margin-top:50px;	
 	background-color: #212529;
-	padding: 15px 0px 5px 0px;
+	padding: 2vw 0vw 1vw 0vw;
+	font-size: 1vw;
+	margin-top: 2vw;
 }
+
 .element img{
-	border-radius: 0%;
-	width: 70px;
+	border-radius: 0vw;
+	width: 5vw;
 }

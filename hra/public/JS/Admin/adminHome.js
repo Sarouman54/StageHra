@@ -7,6 +7,31 @@ var map = new ol.Map({
     ],
     view: new ol.View({
       center: ol.proj.fromLonLat([2, 47]),
-      zoom: 5
+      zoom: 1
     })
 });
+
+$.get(
+	'/adminMap',
+	'false',
+	AddMap,
+	'json'
+);
+
+function AddMap(data){
+	data.forEach((coordinate) => {
+		var layer = new ol.layer.Vector({
+			source: new ol.source.Vector({
+				features: [
+					new ol.Feature({
+						geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinate["longitude"], coordinate["latitude"]]))
+            		}),
+        		]
+			})		
+		});
+		map.addLayer(layer);
+	})
+};
+
+
+
