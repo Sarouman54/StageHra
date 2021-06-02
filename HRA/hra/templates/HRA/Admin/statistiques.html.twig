@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('CSS/Admin/statistiques.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="stat">
+  		<canvas id="myChart"></canvas>  		
+	</div>
+
+<!-- ************************************************* ADD SCRIPT ************************************************ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ asset('JS/statistical.js')}}"></script>
+
+{% endblock %}
