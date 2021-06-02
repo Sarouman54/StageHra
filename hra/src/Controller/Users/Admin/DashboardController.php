@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Users\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -14,9 +14,9 @@ class DashboardController extends AbstractDashboardController
     /**
      * @Route("/admin", name="adminHome")
      */
-    public function admin(): Response
+    public function adminHome(): Response
     {
-        return $this->render('HRA/Admin/adminHome.html.twig');
+        return $this->render('Users/Admin/adminHome.html.twig');
     }
     
     /**
@@ -24,31 +24,31 @@ class DashboardController extends AbstractDashboardController
      */
     public function agenda(): Response
     {
-        return $this->render('HRA/Admin/agenda.html.twig');
+        return $this->render('Users/Admin/agenda.html.twig');
     }
     
     /**
      * @Route("/admin/activites", name="activities")
      */
-    public function activite(): Response
+    public function activities(): Response
     {
-        return $this->render('HRA/Admin/activite.html.twig');
+        return $this->render('Users/Admin/activities.html.twig');
     }
     
     /**
      * @Route("/admin/personnels", name="staff")
      */
-    public function personnels(): Response
+    public function staff(): Response
     {
-        return $this->render('HRA/Admin/personnels.html.twig');
+        return $this->render('Users/Admin/staff.html.twig');
     }
     
     /**
      * @Route("/admin/organisation", name="organization")
      */
-    public function organisation(): Response
+    public function organization(): Response
     {
-        return $this->render('HRA/Admin/organisation.html.twig');
+        return $this->render('Users/Admin/organization.html.twig');
     }
     
     /**
@@ -56,7 +56,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function localisation(): Response
     {
-        return $this->render('HRA/Admin/localisation.html.twig');
+        return $this->render('Users/Admin/localisation.html.twig');
     }
     
     /**
@@ -64,7 +64,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function statistiques(): Response
     {
-        return $this->render('HRA/Admin/statistiques.html.twig');
+        return $this->render('Users/Admin/statisticals.html.twig');
     }
     
     /**
@@ -72,7 +72,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function parametres(): Response
     {
-        return $this->render('HRA/Admin/parametres.html.twig');
+        return $this->render('Users/Admin/settings.html.twig');
     }
     
     

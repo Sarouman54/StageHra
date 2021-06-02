@@ -7,24 +7,35 @@ var map = new ol.Map({
     ],
     view: new ol.View({
       center: ol.proj.fromLonLat([2, 47]),
-      zoom: 1
+      zoom: 5
     })
 });
 
-$.get(
-	'/adminMap',
-	'false',
-	AddMap,
-	'json'
-);
+AjaxCall();
+setInterval(AjaxCall, 10000);
+
+function AjaxCall(){
+	$.get(
+		'/adminMap',
+		'false',
+		AddMap,
+		'json'
+	);
+}
 
 function AddMap(data){
+
+	if(map.getLayers().getLength() >= 2){
+		for(let i = 0; i+1 < map.getLayers().getLength() ; i++)
+			map.removeLayer(map.getLayers().item(i+1));
+	}
+
 	data.forEach((coordinate) => {
 		var layer = new ol.layer.Vector({
 			source: new ol.source.Vector({
 				features: [
 					new ol.Feature({
-						geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinate["longitude"], coordinate["latitude"]]))
+						geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinate["longitude"], coordinate["latitude"]])),
             		}),
         		]
 			})		
@@ -32,6 +43,3 @@ function AddMap(data){
 		map.addLayer(layer);
 	})
 };
-
-
-

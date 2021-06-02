@@ -15,7 +15,7 @@ class HraController extends AbstractController
     #[Route('/hra', name: 'hra')]
     public function index(): Response
     {
-        return $this->render('HRA/index.html.twig', [
+        return $this->render('index.html.twig', [
             'controller_name' => 'HraController',
         ]);
     }
@@ -23,12 +23,12 @@ class HraController extends AbstractController
     #[Route('/', name: 'home')]
     public function home(): Response
     {
-        return $this->render('HRA/home.html.twig');
+        return $this->render('home.html.twig');
     }
 
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
     {
-        return $this->render('HRA/contact.html.twig');
+        return $this->render('contact.html.twig');
     }
 }
