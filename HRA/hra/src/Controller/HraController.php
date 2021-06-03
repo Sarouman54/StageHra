@@ -31,4 +31,10 @@ class HraController extends AbstractController
     {
         return $this->render('HRA/contact.html.twig');
     }
+    
+    #[Route('/user', name: 'userHome')]
+    public function userHome(): Response
+    {
+        return $this->render('HRA/Users/Driver/driverHome.html.twig');
+    }
 }

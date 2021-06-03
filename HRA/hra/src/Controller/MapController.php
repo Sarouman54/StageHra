@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Data;
+use App\Entity\Truck;
 
 class MapController extends AbstractController
 {
@@ -14,14 +15,12 @@ class MapController extends AbstractController
     public function map(): Response
     {
         $doctrine = $this->getDoctrine()->getManager();    
-        $dataObjects = $doctrine->getRepository(Data::class)->findAll();    
+        $truckObjects = $doctrine->getRepository(Truck::class)->findAll();    
         $coordinate = array();
-        foreach($dataObjects as $dataObject){
-            
-            $idTruck = ($dataObject->getIdTruck());
-            
-            dump($idTruck);
-            die();
+        foreach($truckObjects as $truckObject){
+            $dataArray = $truckObject->getIdData();
+            $dataObject = $dataArray->last();
+
             
             $nmeaTrame = explode(",", $dataObject->getNmea());
             

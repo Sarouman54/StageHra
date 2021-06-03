@@ -24,7 +24,7 @@ function AjaxCall(){
 }
 
 function AddMap(data) {
-	
+	console.log(data)
 	if(map.getLayers().getLength() >= 2){
 		for(let i = 0; i+1 < map.getLayers().getLength() ; i++)
 			map.removeLayer(map.getLayers().item(i+1));

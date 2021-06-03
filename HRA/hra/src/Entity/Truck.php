@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TruckRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Truck
      * @ORM\OneToOne(targetEntity=ElectronicCard::class, cascade={"persist", "remove"})
      */
     private $id_card;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Data::class, mappedBy="id_truck")
+     */
+    private $id_data;
+
+    public function __construct()
+    {
+        $this->id_data = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -72,4 +84,13 @@ class Truck
 
         return $this;
     }
+
+    /**
+     * @return Collection|Data[]
+     */
+    public function getIdData(): Collection
+    {
+        return $this->id_data;
+    }
+
 }

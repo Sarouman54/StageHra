@@ -28,9 +28,12 @@ class Data
     private $id_user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Truck::class)
+     * @ORM\ManyToOne(targetEntity=Truck::class, inversedBy="id_data")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $id_truck;
+
+  
 
     public function getId(): ?int
     {
@@ -61,15 +64,16 @@ class Data
         return $this;
     }
 
-    public function getIdTruck(): ?truck
+    public function getIdTruck(): ?Truck
     {
         return $this->id_truck;
     }
 
-    public function setIdTruck(?truck $id_truck): self
+    public function setIdTruck(?Truck $id_truck): self
     {
         $this->id_truck = $id_truck;
 
         return $this;
     }
+
 }
