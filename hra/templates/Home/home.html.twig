@@ -3,25 +3,25 @@
 {% block title %}{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('CSS/home.css')}}">
-{% endblock %}
 
-{% block body %}
+    <link rel="stylesheet" href="{{ asset('CSS/Home/home.css')}}">
+    
+{% endblock %}{% block body %}
 
-<!--  ********************************************* HEADER PART *********************************************** -->
+<!-- ********************************************* HEADER PART *********************************************** -->
 
     <header>
         <div class="hide"></div>
-        <bold><h1> HRA <br> CONCEPT </h1></bold>
+        <bold><h1> hra <br> Concept </h1></bold>
     </header>
     
-<!--  ********************************************* MAIN PART *********************************************** -->
+<!-- ********************************************* MAIN PART *********************************************** -->
 
     <main>
         <div class="container">
             <div class="row">
             
-<!-- ************************************************** LEFT PART *********************************************** -->
+<!-- ********************************************* LEFT PART *********************************************** -->
             
                 <div class="col-lg-9" id="leftPart">
                     <h2>Présentation</h2>
@@ -72,24 +72,24 @@
 
                 <div class="col-lg-3" id="rightPart">
                     <h2>Contact</h2>
-                        <div class="contact" id="contact">
-                            <div class="tips" style="background: url({{ asset('Images/Icones/telephone.svg')}})no-repeat 50% 50%">
-                                <h5> Tel : 06 72 94 80 09</h5>
-                            </div>
-                            <div class="tips" style="background: url({{ asset('Images/Icones/geo-alt.svg')}})no-repeat 50% 50%">
-                                <h5>Adresse :<br>Lieu dit Saint Pierre<br>47170-Occitanie<br>France</h5>
-                            </div>
-                            <div class="tips" style="background: url({{ asset('Images/Icones/at.svg')}})no-repeat 50% 50%">
-                                <h5>Mail :<br>hra.conceptuvc.e@gmail.com</h5>
-                            </div>
+                    <div class="contact" id="contact">
+                        <div class="tips" style="background: url({{ asset('Images/Icones/telephone.svg')}})no-repeat 50% 50%">
+                            <h5> Tel : 06 72 94 80 09</h5>
                         </div>
-                        <div class="reseau">
-                            <h5>Réseaux Sociaux</h5>
-                            <a href="https://www.facebook.com/" class="tips"><img src="{{ asset('Images/Icones/facebook.svg')}}" alt="Facebook"></a>
-                            <a href="https://www.instagram.com/" class="tips"><img src="{{ asset('Images/Icones/instagram.svg')}}" alt="Instagram"></a>
-                            <a href="https://www.skype.com/" class="tips"><img src="{{ asset('Images/Icones/skype.svg')}}" alt="Skype"></a>
-                            <a href="https://www.whatsapp.com/" class="tips"><img src="{{ asset('Images/Icones/whatsapp.svg')}}" alt="Whatsapp"></a>
+                        <div class="tips" style="background: url({{ asset('Images/Icones/geo-alt.svg')}})no-repeat 50% 50%">
+                            <h5>Adresse :<br>Lieu dit Saint Pierre<br>47170-Occitanie<br>France</h5>
                         </div>
+                        <div class="tips" style="background: url({{ asset('Images/Icones/at.svg')}})no-repeat 50% 50%">
+                            <h5>Mail :<br>hra.conceptuvc.e@gmail.com</h5>
+                        </div>
+                    </div>
+                    <div class="reseau">
+                        <h5>Réseaux Sociaux</h5>
+                        <a href="https://www.facebook.com/" class="tips"><img src="{{ asset('Images/Icones/facebook.svg')}}" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/" class="tips"><img src="{{ asset('Images/Icones/instagram.svg')}}" alt="Instagram"></a>
+                        <a href="https://www.skype.com/" class="tips"><img src="{{ asset('Images/Icones/skype.svg')}}" alt="Skype"></a>
+                        <a href="https://www.whatsapp.com/" class="tips"><img src="{{ asset('Images/Icones/whatsapp.svg')}}" alt="Whatsapp"></a>
+                    </div>
                 </div>
             </div>
         </div>

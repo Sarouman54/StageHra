@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Home;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
@@ -10,25 +10,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HraController extends AbstractController
+class HomeController extends AbstractController
 {
-    #[Route('/hra', name: 'hra')]
-    public function index(): Response
-    {
-        return $this->render('index.html.twig', [
-            'controller_name' => 'HraController',
-        ]);
-    }
-
     #[Route('/', name: 'home')]
     public function home(): Response
     {
-        return $this->render('home.html.twig');
+        return $this->render('Home/home.html.twig');
     }
 
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
     {
-        return $this->render('contact.html.twig');
+        return $this->render('Home/contact.html.twig');
     }
 }

@@ -1,6 +1,26 @@
-body {
-  font-family: "Lato", sans-serif;
+/* ********************************************* SCROLL *********************************************** */
+
+html{
+	scroll-behavior: smooth;
 }
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+/* ********************************************* TITLE ************************************************ */
+
+h2, h3, h4, footer{
+	text-align: center;
+	color:#FFFF;
+}
+h5{
+	color:#FFFF;
+	font-size: 18px;
+}
+
+/* ********************************************* NAVBAR *********************************************** */
 
 .sidenav {
   height: 100%;
@@ -30,11 +50,6 @@ body {
 .closebtn {
   margin-left: 3%;
   font-size: 30px!important;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 
 .logohra{
@@ -134,62 +149,28 @@ body {
 	margin-top: 5%;
 }
 
-/* ********************************************* SCROLL *********************************************** */
-
-html{
-	scroll-behavior: smooth;
-}
-
-/* ********************************************* TITLE *********************************************** */
-
-h2, h3, h4, footer{
-	text-align: center;
-	color:#FFFF;
-}
-h5{
-	color:#FFFF;
-	font-size: 18px !important;
-}
-
-/* ********************************************* NAVBAR *********************************************** */
-
-.nav-item{
-	color: #212529;
-	font-weight: bold;
-	margin-right: 20px;
-}
-
-
-/* ********************************************* SEARCH *********************************************** */
-
-#search {
-  background-size: cover;
-  height: 0px;
-  width: 70px;
-  min-width: 450px;
-  margin: 0 auto;
-  border-radius: 50%;
-  margin-top: 20px;
-  margin-bottom: 55px;
-  margin-right: 20px;
-}
-
-#search .input-group {
-  width: 50%;
-  min-width: 350px;
-  margin: 0 auto;
-}
-
 /* ************************************************* FOOTER ************************************************ */
 
 footer{
+	position: fixed;
 	background-color: #212529;
-	padding: 2vw 0vw 1vw 0vw;
-	font-size: 1vw;
+	padding-top: 5px;
+	width: 100%;
 	margin-top: 100%;
 }
 
 .element img{
 	border-radius: 0vw;
 	width: 5vw;
+}
+
+/* ************************************************* RESPONSIVE ************************************************ */
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+  	padding-top: 15px;
+  }
+  .sidenav a {
+  	font-size: 18px;
+  }
 }
