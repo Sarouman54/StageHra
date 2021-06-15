@@ -17,15 +17,18 @@ class Data
      */
     private $id;
 
+   
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $id_user;
+
+
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $nmea;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class)
-     */
-    private $id_user;
 
     /**
      * @ORM\ManyToOne(targetEntity=Truck::class, inversedBy="id_data")
@@ -33,23 +36,9 @@ class Data
      */
     private $id_truck;
 
-  
-
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getNmea(): ?string
-    {
-        return $this->nmea;
-    }
-
-    public function setNmea(string $nmea): self
-    {
-        $this->nmea = $nmea;
-
-        return $this;
     }
 
     public function getIdUser(): ?user
@@ -60,6 +49,18 @@ class Data
     public function setIdUser(?user $id_user): self
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getNmea(): ?string
+    {
+        return $this->nmea;
+    }
+
+    public function setNmea(string $nmea): self
+    {
+        $this->nmea = $nmea;
 
         return $this;
     }
@@ -75,5 +76,4 @@ class Data
 
         return $this;
     }
-
 }

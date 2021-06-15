@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Data;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -15,7 +16,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function adminHome(): Response
     {
-        return $this->render('HRA/Users/Admin/adminHome.html.twig');
+        return $this->render('Users/Admin/adminHome.html.twig');
     }
     
     /**
@@ -23,24 +24,59 @@ class DashboardController extends AbstractDashboardController
      */
     public function agenda(): Response
     {
-        return $this->render('HRA/Users/Admin/agenda.html.twig');
+        return $this->render('Users/Admin/agenda.html.twig');
     }
-
+    
+    /**
+     * @Route("/admin/activites", name="activities")
+     */
+    public function activities(): Response
+    {
+        return $this->render('Users/Admin/activities.html.twig');
+    }
+    
+    /**
+     * @Route("/admin/personnels", name="staff")
+     */
+    public function staff(): Response
+    {
+        return $this->render('Users/Admin/staff.html.twig');
+    }
+    
+    /**
+     * @Route("/admin/organisation", name="organization")
+     */
+    public function organization(): Response
+    {
+        return $this->render('Users/Admin/organization.html.twig');
+    }
+    
+    /**
+     * @Route("/admin/localisation", name="localisation")
+     */
+    public function localisation(): Response
+    {
+        return $this->render('Users/Admin/localisation.html.twig');
+    }
+    
     /**
      * @Route("/admin/statistiques", name="statistical")
      */
-    public function statistical(): Response
+    public function statistiques(): Response
     {
-        return $this->render('HRA/Users/Admin/statisticals.html.twig');
+        return $this->render('Users/Admin/statisticals.html.twig');
     }
     
     /**
      * @Route("/admin/parametres", name="settings")
      */
-    public function settings(): Response
+    public function parametres(): Response
     {
-        return $this->render('HRA/Users/Admin/settings.html.twig');
+        return $this->render('Users/Admin/settings.html.twig');
     }
+    
+    
+    
     
     /**
      * @Route("/admin/index", name="index")

@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
-
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('CSS/security/login.css')}}">
+    <link rel="stylesheet" href="{{ asset('CSS/Home/security/login.css')}}">
 {% endblock %}
 
 {% block body %}
+
+<!-- ********************************************** TITLE PART *********************************************** -->
+
+    {% block title %}
+    	<title>hra Concept - Connexion</title>
+    {% endblock %}
+
 	<div class="margin-navbar">
         <form method="post">
             {% if error %}
@@ -48,9 +53,5 @@
                 Sign in
             </button>
         </form>
-        
-        {% if is_granted('ROLE_ADMIN') %}
-    	    <a class="nav-link" href="{{path('agenda')}}">Espace admin</a>
-        {% endif %}
 	</div>
 {% endblock %}

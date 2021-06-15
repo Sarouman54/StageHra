@@ -78,7 +78,7 @@ class Truck
         return $this->id_card;
     }
 
-    public function setIdCard(electronicCard $id_card): self
+    public function setIdCard(?electronicCard $id_card): self
     {
         $this->id_card = $id_card;
 
@@ -92,5 +92,4 @@ class Truck
     {
         return $this->id_data;
     }
-
 }

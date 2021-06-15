@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
-
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('CSS/registration/register.css')}}">
+    <link rel="stylesheet" href="{{ asset('CSS/Home/registration/register.css')}}">
 {% endblock %}
 
 {% block body %}
+
+<!-- ********************************************** TITLE PART *********************************************** -->
+
+    {% block title %}
+    	<title>hra Concept - Inscription</title>
+    {% endblock %}
+
 	<div class="margin-navbar">
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>

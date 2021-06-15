@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+    
         <meta charset="UTF-8">
         <meta name="viewport" content="width-device-width,initial-scale-1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,16 +14,17 @@
 
         {% block javascripts %}
         {% endblock %}
+        
     </head>
    
     <body>
         {% block header %}
             <div id="mySidenav" class="sidenav">
-{#             	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>#}
+            	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra"></a>
                 <br>
                 {% if not app.user %}
-                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}">Accueil</a>
+                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}" class="homeText">Accueil</a>
                     <img src="{{ asset('Images/Icones/login.png')}}" alt="connexion" class="login"><a href="{{ path('app_login')}}">Connexion</a>
                     <img src="{{ asset('Images/Icones/inscription.png')}}" alt="inscription" class="register"><a href="{{ path('app_register')}}">Inscription</a>
                     <img src="{{ asset('Images/Icones/contact.png')}}" alt="contact" class="contact"><a href="{{ path('contact')}}">Contact</a>
@@ -36,12 +38,12 @@
                  	<div class="footermenu">
                     	<hr class="dividermenu">
                         <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="settings"><a href="{{ path('settings')}}">Paramètres</a>
-						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Se Déconnecter</a>                
+						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Déconnexion</a>                
                     </div>
                 {% endif %}
             </div>
-{#             <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>#}
-{#             <script src="{{ asset('JS/base.js')}}"></script>#}
+            <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+            <script src="{{ asset('JS/base.js')}}"></script>
 
             <!--  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
                 <div class="collapse navbar-collapse">
@@ -87,14 +89,49 @@
 
 <!-- ************************************************* FOOTER ************************************************ -->
         {% block footer %}
-
-            <footer> 
-                <div class="footer element">
-                    <a href="https://bourdelle.mon-ent-occitanie.fr/" class="nav-item"><img src="{{ asset('Images/logoLyceeBourdelle.jpg')}}" alt="logoLyceeBourdelle"></a>
-                </div>
-                <p>from Lycée Antoine Bourdelle 2021 ©</p>
-            </footer>
+        
+            <footer class="footer-distributed"> 
             
-        {% endblock %}
+                <div class="footer-left" id="footerLeft">	
+					<h3>hra Concept<br><span>UVc & e</span> </h3>
+                    <p class="footer-links">
+                        <a href="/">Accueil</a>
+                        ·
+                        <a href="/contact">Contact</a>
+                        ·
+                        <a href="#">À propos</a>
+                    </p>
+                    <p class="footer-company-name">hra Concept &copy; 2019-2021<br>Lycée Antoine Bourdelle &copy; 2021</p>
+				</div>
+                       
+				<div class="footer-center" id="footerCenter">
+                    <div>
+                        <p>
+                            <span>Lieu dit Saint Pierre</span> 47170, Occitanie, France
+						</p>
+                    </div>
+                     
+                    <div>
+                        <p>
+                        	<a href="tel: +33672948009">06 72 94 80 09</a>
+                        	<br>
+                       	</p>
+                    </div>
+                    
+                    <div>
+                        <p>
+                        	<a href="mailto:support@company.com">hra.conceptuvc.e@gmail.com</a>
+                       	</p>
+                    </div>  
+				</div>
+                       
+                <div class="footer-right" id="footerRight">
+                    <p class="footer-company-about"> <span> About the company </span> hra Concept UVc & e </p>
+                </div>
+                
+			</footer>
+			
+	    {% endblock %}
+	    
 	</body>
 </html>
