@@ -33,7 +33,7 @@
                 	{% if is_granted('ROLE_ADMIN') %}
                     	<img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('adminHome')}}">Accueil</a>
                     {% else %}
-                        <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('userHome')}}">Accueil</a>
+                        <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('driverHome')}}">Accueil</a>
                     {% endif %}                	
                  	<div class="footermenu">
                     	<hr class="dividermenu">

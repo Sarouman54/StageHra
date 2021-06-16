@@ -18,6 +18,14 @@ class DashboardController extends AbstractDashboardController
     {
         return $this->render('Users/Admin/adminHome.html.twig');
     }
+
+    /**
+     * @Route("/driver", name="driverHome")
+     */
+    public function driverHome(): Response
+    {
+        return $this->render('Users/Driver/driverHome.html.twig');
+    }
     
     /**
      * @Route("/admin/agenda", name="agenda")

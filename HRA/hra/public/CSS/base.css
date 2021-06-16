@@ -44,6 +44,7 @@ h5{
 .closebtn {
   margin-left: 3%;
   font-size: 30px!important;
+  float: left;
 }
 
 .logohra{
@@ -52,7 +53,7 @@ h5{
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2vw;
+    margin-top: 25%;
 }
 
 .user{
@@ -140,7 +141,6 @@ h5{
 
 .margin-navbar{
 	margin-left: 10%;
-	margin-top: 5%;
 }
 
 /* ************************************************* FOOTER ************************************************ */
