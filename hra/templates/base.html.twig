@@ -18,77 +18,82 @@
     </head>
    
     <body>
-    	<div id="main">
-            {% block header %}
-                <div id="mySidenav" class="sidenav">
-                	<a href="javascript:void(0)" class="close-nav" onclick="closeNav()">&times;</a>
-                    <a href="#"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra"></a>
-                    <br>
-                    {% if not app.user %}
-                        <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}" class="homeText">Accueil</a>
-                        <img src="{{ asset('Images/Icones/login.png')}}" alt="connexion" class="login"><a href="{{ path('app_login')}}">Connexion</a>
-                        <img src="{{ asset('Images/Icones/inscription.png')}}" alt="inscription" class="register"><a href="{{ path('app_register')}}">Inscription</a>
-                        <img src="{{ asset('Images/Icones/contact.png')}}" alt="contact" class="contact"><a href="{{ path('contact')}}">Contact</a>
+        {% block header %}
+        
+            <div id="mySidenav" class="sidenav">
+            	<a href="javascript:void(0)" class="close-nav" onclick="closeNav()">&times;</a>
+            	<div class="overlay" id="myOverlay"></div>
+                <a href="#"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt="logohra" class="logohra"></a>
+                <br>
+                {% if not app.user %}
+                    <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('home')}}" class="homeText">Accueil</a>
+                    <img src="{{ asset('Images/Icones/login.png')}}" alt="connexion" class="login"><a href="{{ path('app_login')}}">Connexion</a>
+                    <img src="{{ asset('Images/Icones/inscription.png')}}" alt="inscription" class="register"><a href="{{ path('app_register')}}">Inscription</a>
+                    <img src="{{ asset('Images/Icones/contact.png')}}" alt="contact" class="contact"><a href="{{ path('contact')}}">Contact</a>
+                    <img src="{{ asset('Images/Icones/propos.png')}}" alt="propos" class="about"><a href="{{ path('about')}}"  class="aboutText">À propos</a>
+                {% else %}
+                	<a href="#" class="user">{{app.user.firstName}} {{app.user.lastName}}</a>
+                	{% if is_granted('ROLE_ADMIN') %}
+                    	<img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('adminHome')}}">Accueil</a>
+                    	<img src="{{ asset('Images/Icones/personnels.png')}}" alt="personnels" class="staff"><a href="{{ path('staff')}}">Personnels</a>
                     {% else %}
-                    	<a href="#" class="user">{{app.user.firstName}} {{app.user.lastName}}</a>
-                    	{% if is_granted('ROLE_ADMIN') %}
-                        	<img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('adminHome')}}">Accueil</a>
-                        {% else %}
-                            <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('userHome')}}">Accueil</a>
-                        {% endif %}                	
-                     	<div class="footermenu">
-                        	<hr class="dividermenu">
-                            <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="settings"><a href="{{ path('settings')}}">Paramètres</a>
-    						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Déconnexion</a>                
+                        <img src="{{ asset('Images/Icones/accueil.png')}}" alt="accueil" class="home"><a href="{{ path('driverHome')}}">Accueil</a>
+                    {% endif %}                	
+                 	<div class="footermenu">
+                    	<hr class="dividermenu">
+                        <img src="{{ asset('Images/Icones/settings.png')}}" alt="paramètres" class="settings"><a href="{{ path('settings')}}">Paramètres</a>
+						<img src="{{ asset('Images/Icones/logout.png')}}" alt="déconnexion" class="logout"><a href="{{ path('app_logout')}}">Déconnexion</a>                
+                    </div>
+                {% endif %}
+            </div>
+            <span class="open-nav" onclick="openNav()" id="openNav">&#9776;</span>
+            <script src="{{ asset('JS/base.js')}}"></script>
+
+            <!--  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
+                <div class="collapse navbar-collapse">
+                    <a href="{{ path('home')}}" class="nav-item"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt=""></a>
+                    <a href="{{ path('home')}}" class="nav-item nav-link">Accueil</a>
+                    <a href="{{ path('agenda')}}" class="nav-item nav-link">Agenda</a>
+                    <a href="{{ path('contact')}}" class="nav-item nav-link">Contact</a>
+                    <a href="{{ path('statistical')}}" class="nav-item nav-link">Statistiques</a>
+                    <div id="search">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="entrez votre recherche...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">Rechercher</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hide">
+                    <div class="dropdown">
+                    {% if not app.user %}
+                        <button class="boutonmenuprincipal">Connexion/Inscription</button>
+                        <div class="dropdown-list">
+                            <a href="{{ path('app_login')}}" class="nav-item nav-link">S'identifier</a>
+                            <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
+                        </div>
+                    {% else %}
+                        <button class="boutonmenuprincipal">Compte</button>
+                        <div class="dropdown-list">
+                            <a href="" class="nav-item nav-link">{{app.user.email}}</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            
+                            {% endif %}
+                            <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
                         </div>
                     {% endif %}
+                    </div>
                 </div>
-                <span class="open-nav" onclick="openNav()" id="openNav">&#9776;</span>
-                <script src="{{ asset('JS/base.js')}}"></script>
-    
-                <!--  <nav class="navbar navbar-expand-sm bg-dark fixed-top">
-                    <div class="collapse navbar-collapse">
-                        <a href="{{ path('home')}}" class="nav-item"><img src="{{ asset('Images/logoHRAConcept.PNG')}}" alt=""></a>
-                        <a href="{{ path('home')}}" class="nav-item nav-link">Accueil</a>
-                        <a href="{{ path('agenda')}}" class="nav-item nav-link">Agenda</a>
-                        <a href="{{ path('contact')}}" class="nav-item nav-link">Contact</a>
-                        <a href="{{ path('statistical')}}" class="nav-item nav-link">Statistiques</a>
-                        <div id="search">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="entrez votre recherche...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">Rechercher</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hide">
-                        <div class="dropdown">
-                        {% if not app.user %}
-                            <button class="boutonmenuprincipal">Connexion/Inscription</button>
-                            <div class="dropdown-list">
-                                <a href="{{ path('app_login')}}" class="nav-item nav-link">S'identifier</a>
-                                <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
-                            </div>
-                        {% else %}
-                            <button class="boutonmenuprincipal">Compte</button>
-                            <div class="dropdown-list">
-                                <a href="" class="nav-item nav-link">{{app.user.email}}</a>
-                                {% if is_granted('ROLE_ADMIN') %}
-                                
-                                {% endif %}
-                                <a href="{{ path('app_register')}}" class="nav-item nav-link">Créer son compte</a>
-                            </div>
-                        {% endif %}
-                        </div>
-                    </div>
-                </nav>-->
-            {% endblock %}       
-    
-            {% block body %}        
-            {% endblock %}
-		</div>
+            </nav>-->
+            
+        {% endblock %}       
+
+        {% block body %}        
+        {% endblock %}
+
 <!-- ************************************************* FOOTER ************************************************ -->
+
         {% block footer %}
         
             <footer class="footer-distributed"> 
@@ -114,14 +119,14 @@
                      
                     <div>
                         <p>
-                        	<a href="tel: +33672948009">06 72 94 80 09</a>
+                        	<a href="tel: +33672948009" class="footer-center-tel">06 72 94 80 09</a>
                         	<br>
                        	</p>
                     </div>
                     
                     <div>
                         <p>
-                        	<a href="mailto:support@company.com">hra.conceptuvc.e@gmail.com</a>
+                        	<a href="mailto:support@company.com" class="footer-center-mail">hra.conceptuvc.e@gmail.com</a>
                        	</p>
                     </div>  
 				</div>

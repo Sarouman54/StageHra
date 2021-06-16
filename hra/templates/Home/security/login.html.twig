@@ -11,16 +11,16 @@
     {% block title %}
     	<title>hra Concept - Connexion</title>
     {% endblock %}
-
-	<div class="margin-navbar">
+    
+	<div class="marginNavbar">
         <form method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
             
-{#             {% if app.user.isVerified==true %}#}
-{#             	<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
-{#             {% endif %}#}
+    {#             {% if app.user.isVerified==true %}#}
+    {#             	<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+    {#             {% endif %}#}
         
             {% if app.user %}
                 <div class="mb-3">
@@ -53,5 +53,6 @@
                 Sign in
             </button>
         </form>
-	</div>
+    </div>
+    
 {% endblock %}

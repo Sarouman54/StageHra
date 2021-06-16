@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DataTypeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +24,17 @@ class DataType
      */
     private $data_type;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Data::class, mappedBy="id_type")
+     */
+    private $data;
+
+
+    public function __construct()
+    {
+        $this->data = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,5 +50,13 @@ class DataType
         $this->data_type = $data_type;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Data[]
+     */
+    public function getData(): Collection
+    {
+        return $this->data;
     }
 }

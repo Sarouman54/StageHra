@@ -12,7 +12,7 @@
     	<title>hra Concept - Inscription</title>
     {% endblock %}
 
-	<div class="margin-navbar">
+	<div class="marginNavbar">
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
         {% endfor %}
@@ -28,4 +28,5 @@
             <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}
 	</div>
+
 {% endblock %}

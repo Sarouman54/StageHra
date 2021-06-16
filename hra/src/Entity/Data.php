@@ -36,6 +36,12 @@ class Data
      */
     private $id_truck;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=DataType::class, inversedBy="data")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $id_type;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -73,6 +79,18 @@ class Data
     public function setIdTruck(?Truck $id_truck): self
     {
         $this->id_truck = $id_truck;
+
+        return $this;
+    }
+
+    public function getIdType(): ?DataType
+    {
+        return $this->id_type;
+    }
+
+    public function setIdType(?DataType $id_type): self
+    {
+        $this->id_type = $id_type;
 
         return $this;
     }
