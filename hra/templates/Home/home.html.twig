@@ -1,27 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{%  block head %}
+                
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/Home/home.css')}}">
+        {% endblock %}
+        
+         
+        
+{% endblock %}
 
-{% block stylesheets %}
 
-    <link rel="stylesheet" href="{{ asset('CSS/Home/home.css')}}">
-    
-{% endblock %}{% block body %}
+
+{% block body %}
+
+<!-- ********************************************** TITLE PART *********************************************** -->
+
+        {% block title %}
+        	<title>hra Concept - Accueil</title>
+        {% endblock %}
 
 <!-- ********************************************* HEADER PART *********************************************** -->
-
+       
     <header>
         <div class="hide"></div>
         <bold><h1> hra <br> Concept </h1></bold>
     </header>
     
-<!-- ********************************************* MAIN PART *********************************************** -->
+<!-- ********************************************** MAIN PART ************************************************ -->
 
     <main>
-        <div class="container">
+        <div class="container margin-navbar">
             <div class="row">
             
-<!-- ********************************************* LEFT PART *********************************************** -->
+<!-- ********************************************** LEFT PART ************************************************ -->
             
                 <div class="col-lg-9" id="leftPart">
                     <h2>Présentation</h2>

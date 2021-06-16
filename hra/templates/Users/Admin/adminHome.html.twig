@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
 {% block stylesheets %} 
     <link rel="stylesheet" href="{{ asset('CSS/Users/Admin/adminHome.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
@@ -9,17 +7,36 @@
 
 {% block body %}
 
-<body>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
-	<div class="margin-navbar">
-        <div id="map" class="map"><div id="info"></div>
+    {% block title %}
+    	<title>Mon Accueil</title>
+    {% endblock %}
+
+    <body>
+    
+        <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    
+    	<div class="margin-navbar">
+            <div id="map" class="map">
+            	<label for="speed">
+    				speed:&nbsp;
+                	<input id="speed" type="range" min="10" max="999" step="10" value="60">
+            	</label>
+            	<button id="start-animation">Start Animation</button>
+            </div>
+            <div id="popup" class="ol-popup">
+            	<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            	<div id="popup-content"></div>
+            </div>
         </div>
-        <div id="popup" class="ol-popup">
-        	<a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        	<div id="popup-content"></div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ asset('JS/Users/Admin/adminHome.js')}}"></script>
-</body>
+        
+        <!-- ********************************************** Script files ************************************************** -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ asset('JS/Users/Admin/adminHome.js')}}"></script>
+        <script src="https://unpkg.com/elm-pep"></script>
+        
+        <!-- ************************************************************************************************************** -->
+        
+    </body>
+
 {% endblock %}

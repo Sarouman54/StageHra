@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('CSS/Home/contact.css')}}">
 {% endblock %}
 
 {% block body %}
+
+<!-- ********************************************** TITLE PART *********************************************** -->
+
+    {% block title %}
+    	<title>hra Concept - Contact</title>
+    {% endblock %}
+
     <div class="margin-navbar">
         <div class="container contact-form">
             <div class="contact-image">
