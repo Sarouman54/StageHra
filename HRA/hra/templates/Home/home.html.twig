@@ -1,16 +1,21 @@
-{% extends 'base.html.twig' %}
-
 {%  block head %}
-                
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('CSS/Home/home.css')}}">
-        {% endblock %}
         
-         
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        {% block stylesheets %}
+        	<link rel="stylesheet" href="{{ asset('CSS/Home/animate.min.css')}}">
+        	<link rel="stylesheet" href="{{ asset('CSS/Home/bootstrap.min.css')}}">
+        	<link rel="stylesheet" href="{{ asset('CSS/Home/font-awesome.min.css')}}">
+        	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">	
+            <link rel="stylesheet" href="{{ asset('CSS/Home/home.css')}}">
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+        {% endblock %}     
         
 {% endblock %}
-
-
 
 {% block body %}
 
@@ -19,97 +24,247 @@
         {% block title %}
         	<title>hra Concept - Accueil</title>
         {% endblock %}
+  
+  <!-- ********************************************* TIME LINE *********************************************** -->
+  
+  <body id="top">
+		<!-- start preloader -->
+		<div class="preloader">
+			<div class="sk-spinner sk-spinner-wave">
+     	 		<div class="sk-rect1"></div>
+       			<div class="sk-rect2"></div>
+       			<div class="sk-rect3"></div>
+      	 		<div class="sk-rect4"></div>
+      			<div class="sk-rect5"></div>
+     		</div>
+    	</div>
+    	<!-- end preloader -->
+		
+    	<!-- start home -->
+    	<section id="home">
+    		<img src="{{ asset('Images/logoHRAConcept.PNG')}}" class="logo">
+    		<div class="button">
+	    		<a data-scroll href="{{ path('app_register')}}" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">Inscription</a>
+	    		<a data-scroll href="{{ path('app_login')}}" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">Connexion</a>
+    		</div>
+    		<div class="container center">
+    			<div class="row">
+    				<div class="col-md-offset-2 col-md-8">
+    					<h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">hra Concept <span>UVc & e</span></h1>
+    					<div class="element">
+                            <div class="sub-element">Solutions de désinfection par ultraviolet</div>
+                            <div class="sub-element">Garantir une qualité sanitaire de l'air et des surfaces</div>
+                            <div class="sub-element">Mise en place de module UVc</div>
+                        </div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- end home -->
 
-<!-- ********************************************* HEADER PART *********************************************** -->
-       
-    <header>
-        <div class="hide"></div>
-        <bold><h1> hra <br> Concept </h1></bold>
-    </header>
-    
-<!-- ********************************************** MAIN PART ************************************************ -->
+    	<!-- start about -->
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">UN BESOIN, <span>UNE SOLUTION !</span></h2>
+    				</div>
+    				<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-question"></i>
+								</div>
+								<h3 class="media-heading">La problématique</h3>
+							</div>
+							<div class="media-body">
+								<p>Il est impératif que la chaine microbienne soit respectée dans certains secteurs d'activité. Le traitement de l'air des surfaces devient alors une priorité pour éliminer tout risque bactériologique.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.6s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-wrench"></i>
+								</div>
+								<h3 class="media-heading">Les besoins</h3>
+							</div>
+							<div class="media-body">
+								<p>Pour les métiers du transport de personnes et de marchandises, garantir une qualité sanitaire de l'air et des surfaces, est une priorité afin d’éliminer tout risque bactériologique.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="0.9s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-check-square"></i>
+								</div>
+								<h3 class="media-heading">La solution</h3>
+							</div>
+							<div class="media-body">
+								<p>Mettre en place des modules UVc spécifiquement adaptés au type de transport utilisé. Le traitement par UVc est considérée comme une des technologies de désinfection les plus efficaces.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end about -->
 
-    <main>
-        <div class="container margin-navbar">
-            <div class="row">
-            
-<!-- ********************************************** LEFT PART ************************************************ -->
-            
-                <div class="col-lg-9" id="leftPart">
-                    <h2>Présentation</h2>
-                    <div class="container">
-                    
-                        <div class="row elements">
-                            <div class="col-sm-4">
-                                <img alt="Industriel" src="{{ asset('Images/industriel.jpg')}}">
-                            </div>
-                            <div class="col-sm-8">
-                                <h3>Context Industriel</h3>
-                                <p>Il  est  impératif  que  la  chaîne  microbienne  soit  respectée  dans  certains  secteurs d’activité. Le traitement de l’aire des surfaces devient alors une priorité pour éliminer tout risque bactériologique.</p>
-                                <div class="button">
-                                    <button class="btn btn-primary">Plus d'informations</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row elements">
-                            <div class="col-sm-4">
-                                <img alt="Besoins" src="{{ asset('Images/besoins.jpg')}}">
-                            </div>
-                            <div class="col-sm-8">
-                                <h3>Les besoins</h3>
-                                <p>Mettre en œuvre un traitement physique qui détruit efficacement les micro-organismes pathogènes. Maintenir voire améliorer les conditions sanitaires du personnel avec des moyens de moins en moins agressifs. Réduire les coûts d’exploitation et simplifier la maintenance</p>
-                                <div class="button">
-                                    <button class="btn btn-primary">Plus d'informations</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row elements">
-                            <div class="col-sm-4">
-                                <img alt="Solution" src="{{ asset('Images/solution.jpg')}}">
-                            </div>
-                            <div class="col-sm-8">
-                                <h3>La solution</h3>
-                                <p>Mettre en place des modules UV spécifiques adaptés aux caisses de camions. Le traitement par UV-C est considéré comme une des techniques de désinfection les plus efficaces. L’exposition au rayonnement UV-C endommage l’ADN des micro-organismes, ce qui entraîne leur destruction immédiate.</p>
-                                <div class="button">
-                                    <button class="btn btn-primary">Plus d'informations</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-<!-- ************************************************ RIGHT PART *********************************************** -->
+    	<!-- start team -->
+    	<section id="team">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s"><span>EQUIPE</span> IMPRESSIONNANTE</h2>
+    				</div>
+    				<div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="0.5s">
+    					<div class="team-wrapper">
+    						<img src="{{ asset('Images/pp.jpg')}}" class="img-responsive" alt="team img 1">
+    							<div class="team-des">
+    								<h4>Pépé le Putois</h4>
+    								<span>Designer</span>
+    								<p>Plus de 30 ans passés dans la réparation automobile et de véhicules industriels</p>
+    							</div>
+    					</div>
+    				</div>
+    				<div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="1.0s">
+    					<div class="team-wrapper">
+    						<img src="{{ asset('Images/grosminet.png')}}" class="img-responsive" alt="team img 2">
+    							<div class="team-des">
+    								<h4>Grosminet</h4>
+    								<span>Developer</span>
+    								<p>Une expérimentation opérationnelle récente et completement fonctionnelle</p>
+    							</div>
+    					</div>
+    				</div>
+    				<div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="0.5s">
+    					<div class="team-wrapper">
+    						<img src="{{ asset('Images/bugs.png')}}" class="img-responsive" alt="team img 3">
+    							<div class="team-des">
+    								<h4>Bugs Bunny</h4>
+    								<span>Director</span>
+    								<p>Étudier et travailler à l’élaboration d’une solution adaptée avec un bureau d’études spécialisé en UVc</p>
+    							</div>
+    					</div>
+    				</div>
+    				<div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="1.0s">
+    					<div class="team-wrapper">
+    						<img src="{{ asset('Images/porky.png')}}" class="img-responsive" alt="team img 4">
+    							<div class="team-des">
+    								<h4>Porky Pig</h4>
+    								<span>Manager</span>
+    								<p>La conviction de la pertinence du concept est necessaire à la concretisation du projet</p>
+    							</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- end team -->
 
-                <div class="col-lg-3" id="rightPart">
-                    <h2>Contact</h2>
-                    <div class="contact" id="contact">
-                        <div class="tips" style="background: url({{ asset('Images/Icones/telephone.svg')}})no-repeat 50% 50%">
-                            <h5> Tel : 06 72 94 80 09</h5>
-                        </div>
-                        <div class="tips" style="background: url({{ asset('Images/Icones/geo-alt.svg')}})no-repeat 50% 50%">
-                            <h5>Adresse :<br>Lieu dit Saint Pierre<br>47170-Occitanie<br>France</h5>
-                        </div>
-                        <div class="tips" style="background: url({{ asset('Images/Icones/at.svg')}})no-repeat 50% 50%">
-                            <h5>Mail :<br>hra.conceptuvc.e@gmail.com</h5>
-                        </div>
-                    </div>
-                    <div class="reseau">
-                        <h5>Réseaux Sociaux</h5>
-                        <a href="https://www.facebook.com/" class="tips"><img src="{{ asset('Images/Icones/facebook.svg')}}" alt="Facebook"></a>
-                        <a href="https://www.instagram.com/" class="tips"><img src="{{ asset('Images/Icones/instagram.svg')}}" alt="Instagram"></a>
-                        <a href="https://www.skype.com/" class="tips"><img src="{{ asset('Images/Icones/skype.svg')}}" alt="Skype"></a>
-                        <a href="https://www.whatsapp.com/" class="tips"><img src="{{ asset('Images/Icones/whatsapp.svg')}}" alt="Whatsapp"></a>
+    	<!-- start service -->
+    	<section id="service">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">DES<span> QUESTIONS</span> ?</h2>
+    				</div>
+    				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+    					<i class="fa fa-clock"></i>
+    					<h4>Pourquoi maintenant</h4>
+    					<p>L’expérience d’une opportunité technique déjà réalisée dans le cadre de mes précédentes fonctions, en réponse à une demande spécifique de clients transporteurs</p>
+    				</div>
+    				<div class="col-md-4 active wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">
+    					<i class="fa fa-crosshairs"></i>
+    					<h4>Les cibles</h4>
+    					<p>Ma zone naturelle de prospection géographique est constituée de la Région et des territoires limitrophes, mais le procédé peut également se déployer au national, voire à l’international</p>
+    				</div>
+    				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+    					<i class="fa fa-check-circle"></i>
+    					<h4>Les avantages</h4>
+    					<p>Cette technologie permet de supprimer le stockage et la manipulation de produits chimiques, ainsi que leur retraitement et impact environnemental. Elle favorise une utilisation modérée de détartrant et dégraissant.</p>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- end servie -->
+
+    	<!-- start portfolio -->
+    	<section id="portfolio">
+    		<div class="container">
+    			<div class="row">
+					<div class="col-md-12">
+						<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s"><span>UNE</span> VIDÉO ?</h2>
+					</div>
+                    <video id="video" controls width="320" height="240">
+					     <source src="{{ asset('Images/hraConcept.mp4')}}" type="video/mp4"/>
+					</video>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- end portfolio -->
+
+    	<!-- start contact -->
+    	<section id="contact">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">NOUS <span>CONTACTER</span></h2>
+    				</div>
+    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+    					<form action="#" method="post">
+    						<label>NOM</label>
+    						<input name="fullname" type="text" class="form-control" id="fullname">
+   						  	
+                            <label>EMAIL</label>
+    						<input name="email" type="email" class="form-control" id="email">
+   						  	
+                            <label>MESSAGE</label>
+    						<textarea name="message" rows="4" class="form-control" id="message"></textarea>
+    						
+                            <input type="submit" class="form-control">
+    					</form>
+    				</div>
+    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+    					<address>
+    						<p class="address-title">Contact</p>
+    						<span>Proposer des solutions de désinfection par ultraviolet pour les métiers du transport de personnes et de marchandises.</span>
+    						<p><i class="fa fa-phone"></i> 06 72 94 80 09</p>
+    						<p><i class="fa fa-envelope-open"></i> hra.conceptuvc.e@gmail.com</p>
+    						<p><i class="fa fa-map-marker"></i> Lieu dit Saint Pierre 47170 MEZIN</p>
+    					</address>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- end contact -->
+
+        <!-- start copyright -->
+        <footer id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+                       	Copyright &copy; 2021 hra Concept</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    
+        </footer>
+        <!-- end copyright -->
+	</body>
+ 
 <!-- ************************************************* ADD SCRIPT ************************************************ -->
 
-    <script src="{{ asset('JS/Librairies/jquery-3.6.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('JS/home.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('JS/Librairies/jquery-3.6.0.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('JS/Home/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('JS/Home/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('JS/Home/jquery.singlePageNav.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('JS/Home/typed.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('JS/Home/wow.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('JS/Home/custom.js')}}"></script>
 
 {% endblock %}

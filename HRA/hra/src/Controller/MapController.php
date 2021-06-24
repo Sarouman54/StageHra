@@ -32,6 +32,8 @@ class MapController extends AbstractController
                                                 "seconds" => $hour["seconds"]));
         }
         return new JsonResponse($truckCoordinate);
+//         dump($truckCoordinate);
+//         die();
     }
     /* ******************************************************************************************************************* */
     

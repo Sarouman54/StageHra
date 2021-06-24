@@ -279,7 +279,7 @@ map.on('click', function(event){
 				
 				$.get(
 					'/admin/map/truck',		//Get URL
-					data, 					//
+					data, 					//Data
 				    AddMap, 				//Call Function
 					'json'					//Type of File
 				)

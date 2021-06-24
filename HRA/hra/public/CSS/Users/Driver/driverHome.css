@@ -8,7 +8,7 @@ body {
 }
 
 .chat_window {
-  position: absolute;
+  position: absolute;       
   width: calc(100% - 20px);
   max-width: 400px;
   height: 500px;
@@ -27,16 +27,6 @@ body {
   width: 100%;
   padding: 20px 0 15px;
   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-}
-
-.top_menu .buttons .button.close {
-  background-color: #f5886e;
-}
-.top_menu .buttons .button.minimize {
-  background-color: #fdbf68;
-}
-.top_menu .buttons .button.maximize {
-  background-color: #a3d063;
 }
 .top_menu .title {
   text-align: center;
